@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://d0f34sgdho3sn"]
+
+[ext_resource type="Script" uid="uid://1rpe1pofbmb" path="res://jogador.gd" id="1_j7yu6"]
+[ext_resource type="Script" uid="uid://cvif04gd6tsln" path="res://botao.gd" id="2_smt6k"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_42f1d"]
+size = Vector3(10, 0.2, 10)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_385an"]
+data = PackedVector3Array(-5, 0.099999994, 5, 5, 0.099999994, 5, -5, -0.099999994, 5, 5, 0.099999994, 5, 5, -0.099999994, 5, -5, -0.099999994, 5, 5, 0.099999994, -5, -5, 0.099999994, -5, 5, -0.099999994, -5, -5, 0.099999994, -5, -5, -0.099999994, -5, 5, -0.099999994, -5, 5, 0.099999994, 5, 5, 0.099999994, -5, 5, -0.099999994, 5, 5, 0.099999994, -5, 5, -0.099999994, -5, 5, -0.099999994, 5, -5, 0.099999994, -5, -5, 0.099999994, 5, -5, -0.099999994, -5, -5, 0.099999994, 5, -5, -0.099999994, 5, -5, -0.099999994, -5, 5, 0.099999994, 5, -5, 0.099999994, 5, 5, 0.099999994, -5, -5, 0.099999994, 5, -5, 0.099999994, -5, 5, 0.099999994, -5, -5, -0.099999994, 5, 5, -0.099999994, 5, -5, -0.099999994, -5, 5, -0.099999994, 5, 5, -0.099999994, -5, -5, -0.099999994, -5)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_42f1d"]
+radius = 0.35
+height = 1.8
+
+[node name="SalaPrincipal" type="Node3D" unique_id=376289249]
+
+[node name="Chao" type="MeshInstance3D" parent="." unique_id=389600088]
+mesh = SubResource("BoxMesh_42f1d")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Chao" unique_id=2006851101]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Chao/StaticBody3D" unique_id=1978803386]
+shape = SubResource("ConcavePolygonShape3D_385an")
+
+[node name="Jogador" type="CharacterBody3D" parent="." unique_id=1152231897]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 3)
+script = ExtResource("1_j7yu6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Jogador" unique_id=1975316407]
+shape = SubResource("CapsuleShape3D_42f1d")
+
+[node name="Camera3D" type="Camera3D" parent="Jogador" unique_id=1128351032]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1276159543]
+transform = Transform3D(0.8660254, 0.43301272, -0.24999999, 0, 0.49999997, 0.86602545, 0.5, -0.75, 0.43301266, 0, 0, 0)
+
+[node name="ParedeFundoEsquerda" type="CSGBox3D" parent="." unique_id=1334943186]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.5, -5)
+use_collision = true
+size = Vector3(4, 3, 0.2)
+
+[node name="ParedeFundoDireita" type="CSGBox3D" parent="." unique_id=864128048]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.5, -5)
+use_collision = true
+size = Vector3(4, 3, 0.2)
+
+[node name="ParedeFrente" type="CSGBox3D" parent="." unique_id=1652310522]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 5)
+use_collision = true
+size = Vector3(10, 3, 0.2)
+
+[node name="ParedeEsquerda" type="CSGBox3D" parent="." unique_id=549421973]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.5, 0)
+use_collision = true
+size = Vector3(0.2, 3, 10)
+
+[node name="ParedeDireita" type="CSGBox3D" parent="." unique_id=1251753452]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.5, 0)
+use_collision = true
+size = Vector3(0.2, 3, 10)
+
+[node name="Porta" type="CSGBox3D" parent="." unique_id=1449091492]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, -5)
+use_collision = true
+size = Vector3(1.9, 2.4, 0.2)
+
+[node name="Botao" type="CSGBox3D" parent="." unique_id=1456488227]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 1.2, -4.8)
+size = Vector3(0.3, 0.3, 0.2)
+script = ExtResource("2_smt6k")
+
+[node name="Instrucao" type="Label3D" parent="." unique_id=671651699]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 1.9, -4.6)
+text = "Aproxime-se e aperte E"
