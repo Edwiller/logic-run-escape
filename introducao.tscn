@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://ik1em7if3uj0"]
+
+[ext_resource type="Script" uid="uid://bvqlwnks7m6dm" path="res://boto.gd" id="1_s7n2p"]
+[ext_resource type="Script" uid="uid://c2bg747p5n604" path="res://comeca.gd" id="2_aa2vk"]
+
+[node name="Introducao" type="Control" unique_id=1133674954]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ceu" type="ColorRect" parent="." unique_id=547311618]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2784314, 1, 1, 1)
+
+[node name="Rio" type="ColorRect" parent="." unique_id=24281640]
+layout_mode = 0
+offset_top = 502.0
+offset_right = 1156.0
+offset_bottom = 662.0
+color = Color(0.078431375, 0.05882353, 0.73333335, 1)
+
+[node name="Titulo" type="Label" parent="." unique_id=959049012]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -236.0
+offset_top = 60.0
+offset_right = 236.0
+offset_bottom = 127.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 48
+text = "O ENIGMA DO BOTO"
+
+[node name="Margem" type="ColorRect" parent="." unique_id=1744463905]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -577.0
+offset_top = -46.0
+offset_right = 580.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.2509804, 0.63529414, 0.05882353, 1)
+
+[node name="Narracao" type="Label" parent="." unique_id=1848346659]
+layout_mode = 0
+offset_left = 309.0
+offset_top = 145.0
+offset_right = 837.0
+offset_bottom = 310.0
+theme_override_font_sizes/font_size = 28
+text = "Perdidos às margens do rio Amazonas,
+vocês procuram o caminho de casa.
+
+Um boto-cor-de-rosa surge nas águas..."
+
+[node name="FalaBoto" type="Label" parent="." unique_id=1898541254]
+layout_mode = 0
+offset_left = 309.0
+offset_top = 344.0
+offset_right = 853.0
+offset_bottom = 467.0
+theme_override_font_sizes/font_size = 28
+text = "BOTO:
+“Resolvam meus quatro enigmas juntos,
+e eu mostrarei o caminho de casa!”"
+
+[node name="Boto" type="Node2D" parent="." unique_id=955995257]
+position = Vector2(150, 530)
+script = ExtResource("1_s7n2p")
+
+[node name="Comeca" type="Button" parent="." unique_id=659115997]
+layout_mode = 0
+offset_left = 820.0
+offset_top = 545.0
+offset_right = 1080.0
+offset_bottom = 595.0
+offset_transform_position = Vector2(820, 545)
+text = "Aceitar o desafio
+"
+script = ExtResource("2_aa2vk")
