@@ -17,7 +17,7 @@ script = ExtResource("1_im2dc")
 transform = Transform3D(0.002488877, -5.2154064e-10, -0.019844532, 0.010683922, 0.01685403, 0.0013399641, 0.016723016, -0.010767623, 0.0020973803, 1.7939618, 0.04451847, -0.03536606)
 
 [node name="Chao" type="MeshInstance3D" parent="." unique_id=16882364]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3947887, -0.91878986, -2.5461159)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3950145, -0.8929472, -2.5510864)
 mesh = SubResource("PlaneMesh_42f1d")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1212965338]

@@ -64,11 +64,7 @@ func _physics_process(delta):
 		tempo_restante = tempo_ponte
 		atualizar_ponte(true)
 
-		# Troca os controles dos dois personagens
-		jogador.controles_invertidos = true
-		jogador2.controles_invertidos = true
 
-		print("CONTROLES TROCADOS!")
 		print("Você tem ", tempo_ponte, " segundos para atravessar!")
 
 

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://xwpjqtdalrtu"]
+
+[ext_resource type="Script" uid="uid://c8cqe6oqasie7" path="res://camera/camera_dupla.gd" id="1_m7f7a"]
+
+[node name="CameraDupla" type="Node3D" unique_id=2010276218]
+script = ExtResource("1_m7f7a")
+
+[node name="Inclinacao" type="Node3D" parent="." unique_id=1932187351]
+transform = Transform3D(1, 0, 0, 0, 0.9396926, 0.34202012, 0, -0.34202012, 0.9396926, 0, 0, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="Inclinacao" unique_id=1828546743]
+spring_length = 4.0
+margin = 0.2
+
+[node name="Camera3D" type="Camera3D" parent="Inclinacao/SpringArm3D" unique_id=1174154530]
+current = true

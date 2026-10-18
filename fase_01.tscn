@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://impvc13lvh0"]
+
+[ext_resource type="PackedScene" uid="uid://dv6c2kldu5oot" path="res://cena1.tscn" id="1_axix2"]
+
+[node name="Node3D" type="Node3D" unique_id=564883929]
+
+[node name="SalaPrincipal2" parent="." unique_id=376289249 instance=ExtResource("1_axix2")]
