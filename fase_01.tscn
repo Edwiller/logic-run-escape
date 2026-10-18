@@ -4,4 +4,7 @@
 
 [node name="Node3D" type="Node3D" unique_id=564883929]
 
-[node name="SalaPrincipal2" parent="." unique_id=376289249 instance=ExtResource("1_axix2")]
+[node name="SalaPrincipal" parent="." unique_id=376289249]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40999877, 0, 0.7456708)
+
+[node name="SalaPrincipal2" parent="." unique_id=1076377483 instance=ExtResource("1_axix2")]

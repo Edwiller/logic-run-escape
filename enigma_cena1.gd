@@ -11,7 +11,7 @@ const CORES = ["#ff5555", "#5599ff", "#55dd77", "#ffdd55"]
 @export var saida: Area3D
 
 @export var distancia_interacao: float = 2.5
-@export var tempo_senha: float = 10.0
+@export var tempo_senha: float = 7.0
 @export_file("*.tscn") var proxima_cena: String = "res://fase_02.tscn"
 
 var sequencia: Array[int] = [0, 1, 2, 3]

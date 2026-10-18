@@ -2,6 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://c7if7w5fc0e0y" path="res://Modelos/botocomchapeu.glb" id="1_633to"]
 [ext_resource type="Script" uid="uid://dqucui76j567e" path="res://controle_fase2.gd" id="2_gef7y"]
+[ext_resource type="Script" uid="uid://crbcp3ogews60" path="res://Modelos/boto_companheiro.gd" id="2_l01bb"]
+[ext_resource type="Script" uid="uid://c82mmiv3n8a0v" path="res://Modelos/botopequeno.gd" id="2_vj8sc"]
+[ext_resource type="Script" uid="uid://blg6kn8j5p0y1" path="res://area_3d.gd" id="3_qoj8p"]
 [ext_resource type="PackedScene" uid="uid://bedaht7hsbd3v" path="res://Modelos/Dock Long by Quaternius - bN9Oz3niNm.glb" id="7_6e5fo"]
 [ext_resource type="PackedScene" uid="uid://crqwf8186hgic" path="res://Modelos/Stylized Nature MegaKit.undefined-glb/Fern.glb" id="9_dnq4m"]
 [ext_resource type="PackedScene" uid="uid://dmvfim7ae8d3" path="res://Modelos/Stylized Nature MegaKit.undefined-glb/Flower Group-LqTljN6Wg2.glb" id="10_onkmf"]
@@ -125,6 +128,8 @@ size = Vector3(9.081177, 0.93821716, 16.519073)
 [sub_resource type="BoxMesh" id="BoxMesh_itqjh"]
 size = Vector3(7.4922485, 0.93821716, 13.412605)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_qoj8p"]
+
 [sub_resource type="BoxMesh" id="BoxMesh_an2fo"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_uobaq"]
@@ -165,8 +170,15 @@ size = Vector3(200, 1, 200)
 
 [node name="Fase02" type="Node3D" unique_id=1754650234]
 
-[node name="botocomchapeu" parent="." unique_id=1263930957 instance=ExtResource("1_633to")]
-transform = Transform3D(-0.025189191, 0.013224621, 0.009519139, 0.013945261, 0.026561808, 0, -0.008428185, 0.004424896, -0.028449709, 1.4004691, 0.23062038, 26.080322)
+[node name="botocomchapeu2" parent="." unique_id=1263930957 node_paths=PackedStringArray("jogador_1", "jogador_2") instance=ExtResource("1_633to")]
+transform = Transform3D(0.002051909, 0.00016742648, -0.0014183228, 5.3170847e-05, 0.0024720847, 0.00036874137, 0.0014271805, -0.00033281482, 0.002025436, -21.650902, 1.7593045, 17.148878)
+script = ExtResource("2_vj8sc")
+jogador_1 = NodePath("../jogador")
+jogador_2 = NodePath("../jogador2")
+
+[node name="botocomchapeu" parent="." unique_id=2018606355 instance=ExtResource("1_633to")]
+transform = Transform3D(-0.025189191, 0.013224621, 0.009519139, 0.013945261, 0.026561808, -4.1229353e-10, -0.008428185, 0.0044248956, -0.028449709, 2.5449538, 0.23062034, 22.659817)
+script = ExtResource("2_l01bb")
 
 [node name="chao" type="StaticBody3D" parent="." unique_id=1537374532]
 
@@ -378,6 +390,16 @@ mesh = SubResource("BoxMesh_gvmpc")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.61056, 6.5139627, -1.5397301)
 mesh = SubResource("BoxMesh_itqjh")
 
+[node name="Area3D" type="Area3D" parent="Caverna" unique_id=1808634219 node_paths=PackedStringArray("jogador_1", "jogador_2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.26155, 2.5668335, -1.2958984)
+script = ExtResource("3_qoj8p")
+jogador_1 = NodePath("../../jogador")
+jogador_2 = NodePath("../../jogador2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Caverna/Area3D" unique_id=1001051740]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 5.14563, 1.0381298, -1.200489)
+shape = SubResource("BoxShape3D_qoj8p")
+
 [node name="EnigmaC" type="Node2D" parent="." unique_id=1651379218 node_paths=PackedStringArray("jogador_1", "jogador_2", "placa_inicio", "ponte", "placas", "pedra", "colisoes_pedra")]
 script = ExtResource("2_gef7y")
 jogador_1 = NodePath("../jogador")
@@ -387,6 +409,7 @@ ponte = NodePath("../ponte")
 placas = [NodePath("../cristal1"), NodePath("../cristal2"), NodePath("../cristal3"), NodePath("../cristal4"), NodePath("../cristal5"), NodePath("../cristal6")]
 pedra = NodePath("../Caverna/porta")
 colisoes_pedra = [NodePath("../Caverna/CollisionShape3D4")]
+duracao_ponte = 15.0
 primeira_fase = "uid://n4q5rvbl07a8"
 
 [node name="PedraInicio" type="Node" parent="." unique_id=1811503060]
@@ -473,7 +496,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.796936, 0.37113005, 4.6817
 environment = SubResource("Environment_633to")
 
 [node name="Agua" type="MeshInstance3D" parent="." unique_id=803721957]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10865593, -1.9388294, -0.23019028)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47032547, -1.2555499, -0.21928787)
 mesh = SubResource("BoxMesh_43xk5")
 
 [node name="jogador2" parent="." unique_id=579954434 node_paths=PackedStringArray("referencia_camera") instance=ExtResource("15_qoj8p")]

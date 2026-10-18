@@ -23,7 +23,7 @@ color = Color(0.2784314, 1, 1, 1)
 [node name="Rio" type="ColorRect" parent="." unique_id=24281640]
 layout_mode = 0
 offset_top = 502.0
-offset_right = 1156.0
+offset_right = 1488.0
 offset_bottom = 662.0
 color = Color(0.078431375, 0.05882353, 0.73333335, 1)
 
@@ -47,9 +47,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -577.0
+offset_left = -660.0
 offset_top = -46.0
-offset_right = 580.0
+offset_right = 795.0
 offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 0

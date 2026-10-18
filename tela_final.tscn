@@ -14,7 +14,7 @@ size = Vector2(20, 20)
 script = ExtResource("1_im2dc")
 
 [node name="botocomchapeu" parent="." unique_id=1263930957 instance=ExtResource("1_wbq4q")]
-transform = Transform3D(0.002488877, -5.2154064e-10, -0.019844532, 0.010683922, 0.01685403, 0.0013399641, 0.016723016, -0.010767623, 0.0020973803, 1.7939618, 0.04451847, -0.03536606)
+transform = Transform3D(0.0012444385, -1.862645e-10, -0.009922266, 0.0053419606, 0.008427015, 0.00066998205, 0.008361508, -0.005383811, 0.0010486902, 1.7939618, 0.04451847, -0.03536606)
 
 [node name="Chao" type="MeshInstance3D" parent="." unique_id=16882364]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3950145, -0.8929472, -2.5510864)
