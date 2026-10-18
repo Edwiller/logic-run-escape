@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://1rpe1pofbmb" path="res://jogador.gd" id="1_kv3fb"]
 [ext_resource type="Script" uid="uid://cvif04gd6tsln" path="res://botao.gd" id="2_ifxji"]
+[ext_resource type="Script" uid="uid://beh2og24wlthf" path="res://camera_compartilhada.gd" id="3_4t2ck"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_42f1d"]
 size = Vector3(10, 0.2, 10)
@@ -10,6 +11,10 @@ size = Vector3(10, 0.2, 10)
 data = PackedVector3Array(-5, 0.099999994, 5, 5, 0.099999994, 5, -5, -0.099999994, 5, 5, 0.099999994, 5, 5, -0.099999994, 5, -5, -0.099999994, 5, 5, 0.099999994, -5, -5, 0.099999994, -5, 5, -0.099999994, -5, -5, 0.099999994, -5, -5, -0.099999994, -5, 5, -0.099999994, -5, 5, 0.099999994, 5, 5, 0.099999994, -5, 5, -0.099999994, 5, 5, 0.099999994, -5, 5, -0.099999994, -5, 5, -0.099999994, 5, -5, 0.099999994, -5, -5, 0.099999994, 5, -5, -0.099999994, -5, -5, 0.099999994, 5, -5, -0.099999994, 5, -5, -0.099999994, -5, 5, 0.099999994, 5, -5, 0.099999994, 5, 5, 0.099999994, -5, -5, 0.099999994, 5, -5, 0.099999994, -5, 5, 0.099999994, -5, -5, -0.099999994, 5, 5, -0.099999994, 5, -5, -0.099999994, -5, 5, -0.099999994, 5, 5, -0.099999994, -5, -5, -0.099999994, -5)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_42f1d"]
+radius = 0.35
+height = 1.8
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_42f1d"]
 radius = 0.35
 height = 1.8
 
@@ -32,7 +37,9 @@ shape = SubResource("CapsuleShape3D_42f1d")
 
 [node name="Camera3D" type="Camera3D" parent="Jogador" unique_id=1128351032]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
-current = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Jogador" unique_id=214100073]
+mesh = SubResource("CapsuleMesh_42f1d")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1276159543]
 transform = Transform3D(0.8660254, 0.43301272, -0.24999999, 0, 0.49999997, 0.86602545, 0.5, -0.75, 0.43301266, 0, 0, 0)
@@ -76,3 +83,16 @@ instrucao = NodePath("../Instrucao")
 [node name="Instrucao" type="Label3D" parent="." unique_id=671651699]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 1.9, -4.6)
 text = "Aproxime-se e aperte E"
+
+[node name="CameraRig" type="Node3D" parent="." unique_id=1672003316]
+script = ExtResource("3_4t2ck")
+
+[node name="Inclinacao" type="Node3D" parent="CameraRig" unique_id=839276869]
+transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 0, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraRig/Inclinacao" unique_id=2071071678]
+spring_length = 3.0
+margin = 0.2
+
+[node name="Camera3D" type="Camera3D" parent="CameraRig/Inclinacao/SpringArm3D" unique_id=1854217476]
+current = true
