@@ -409,7 +409,7 @@ ponte = NodePath("../ponte")
 placas = [NodePath("../cristal1"), NodePath("../cristal2"), NodePath("../cristal3"), NodePath("../cristal4"), NodePath("../cristal5"), NodePath("../cristal6")]
 pedra = NodePath("../Caverna/porta")
 colisoes_pedra = [NodePath("../Caverna/CollisionShape3D4")]
-duracao_ponte = 15.0
+duracao_ponte = 20.0
 primeira_fase = "uid://n4q5rvbl07a8"
 
 [node name="PedraInicio" type="Node" parent="." unique_id=1811503060]

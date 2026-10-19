@@ -1,7 +1,34 @@
 [gd_scene format=3 uid="uid://ik1em7if3uj0"]
 
-[ext_resource type="Script" uid="uid://bvqlwnks7m6dm" path="res://boto.gd" id="1_s7n2p"]
-[ext_resource type="Script" uid="uid://c2bg747p5n604" path="res://comeca.gd" id="2_aa2vk"]
+[ext_resource type="Script" uid="uid://dkagvhnpyakaf" path="res://menu_inicial.gd" id="1_aa2vk"]
+[ext_resource type="Texture2D" uid="uid://s10dyexf3pyf" path="res://imagens/Imagem do ChatGPT 18 de out. de 2026, 18_57_54.png" id="2_aa2vk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_42f1d"]
+bg_color = Color(0.4392157, 0.27058825, 0.18039216, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8509804, 0.6862745, 0.4392157, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8c0fj"]
+bg_color = Color(0.28627452, 0.1882353, 0.1254902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ojfn"]
+bg_color = Color(0.5803922, 0.3764706, 0.24313726, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8509804, 0.6862745, 0.4392157, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="Introducao" type="Control" unique_id=1133674954]
 layout_mode = 3
@@ -10,85 +37,70 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_aa2vk")
+texto_creditos = "O ENIGMA DO BOTO
 
-[node name="ceu" type="ColorRect" parent="." unique_id=547311618]
+Desenvolvimento:
+Edwiller de Lima 
+Elis Ananda
+Ágnes Marcela
+Anna Julia
+"
+
+[node name="FundoMenu" type="TextureRect" parent="." unique_id=1389726010]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -89.0
+offset_top = -69.0
+offset_right = 431.0
+offset_bottom = 224.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.2784314, 1, 1, 1)
+texture = ExtResource("2_aa2vk")
+stretch_mode = 5
 
-[node name="Rio" type="ColorRect" parent="." unique_id=24281640]
-layout_mode = 0
-offset_top = 502.0
-offset_right = 1488.0
-offset_bottom = 662.0
-color = Color(0.078431375, 0.05882353, 0.73333335, 1)
-
-[node name="Titulo" type="Label" parent="." unique_id=959049012]
+[node name="BotoesMenu" type="VBoxContainer" parent="." unique_id=455175627]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -236.0
-offset_top = 60.0
-offset_right = 236.0
-offset_bottom = 127.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 48
-text = "O ENIGMA DO BOTO"
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -438.0
+offset_top = -39.0
+offset_right = -238.0
+offset_bottom = 167.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 10
 
-[node name="Margem" type="ColorRect" parent="." unique_id=1744463905]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -660.0
-offset_top = -46.0
-offset_right = 795.0
-offset_bottom = 13.0
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0.2509804, 0.63529414, 0.05882353, 1)
+[node name="Jogar" type="Button" parent="BotoesMenu" unique_id=3219408]
+custom_minimum_size = Vector2(200, 44)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_42f1d")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8c0fj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8ojfn")
+text = "Jogar"
 
-[node name="Narracao" type="Label" parent="." unique_id=1848346659]
-layout_mode = 0
-offset_left = 309.0
-offset_top = 145.0
-offset_right = 837.0
-offset_bottom = 310.0
-theme_override_font_sizes/font_size = 28
-text = "Perdidos às margens do rio Amazonas,
-vocês procuram o caminho de casa.
-
-Um boto-cor-de-rosa surge nas águas..."
-
-[node name="FalaBoto" type="Label" parent="." unique_id=1898541254]
-layout_mode = 0
-offset_left = 309.0
-offset_top = 344.0
-offset_right = 853.0
-offset_bottom = 467.0
-theme_override_font_sizes/font_size = 28
-text = "BOTO:
-“Resolvam meus quatro enigmas juntos,
-e eu mostrarei o caminho de casa!”"
-
-[node name="Boto" type="Node2D" parent="." unique_id=955995257]
-position = Vector2(150, 530)
-script = ExtResource("1_s7n2p")
-
-[node name="Comeca" type="Button" parent="." unique_id=659115997]
-layout_mode = 0
-offset_left = 820.0
-offset_top = 545.0
-offset_right = 1080.0
-offset_bottom = 595.0
-offset_transform_position = Vector2(820, 545)
-text = "Aceitar o desafio
+[node name="ComoJogar" type="Button" parent="BotoesMenu" unique_id=1884687346]
+custom_minimum_size = Vector2(200, 44)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Como Jogar
 "
-script = ExtResource("2_aa2vk")
+
+[node name="Creditos" type="Button" parent="BotoesMenu" unique_id=76376685]
+custom_minimum_size = Vector2(200, 44)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Créditos
+"
+
+[node name="Sair" type="Button" parent="BotoesMenu" unique_id=646474491]
+custom_minimum_size = Vector2(200, 44)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Sair"
